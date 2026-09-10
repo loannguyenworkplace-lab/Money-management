@@ -1,0 +1,42 @@
+<div class="container">
+  <img src="create-new-account.jpg" id="background" alt="background">
+  <div class="register-space">
+    <h1>Create New Account</h1>
+    <form [formGroup]="accountForm" (ngSubmit)="createAccount()">
+      <div class="username">
+         <span> Your name</span>
+         <input type="text" id="username-input" formControlName="username" placeholder="ex: Thanh Loan">
+       </div>
+      <div class="email">
+        <span> Your email</span>
+        <input type="email" id="email-input" formControlName="email" placeholder="****@gmail.com">
+          @if(
+          accountForm.controls.email.touched && accountForm.controls.email.hasError('required')){
+        <small class="error">
+          Email does not empty.
+        </small>
+          }
+          @if(accountForm.controls.email.touched && accountForm.controls.email.hasError('email')){
+          <small class="error">
+            Email does not suitable.
+            </small>
+          }
+      </div>
+      <div class="password-input">
+        <span>Your password</span>
+        <input type="password"  id="password-input" formControlName="password" placeholder="At least 8 characters">
+      </div>
+      <div class="password-cf">
+        <span>Comfirm your password</span>
+        <input type="password" id="password-cf" formControlName="confirmPassword">
+      </div>
+      <button type="submit" id="submit">Create Account</button>
+    </form>
+    <button id="return"
+      (click)="returnLogin()"
+      (mouseenter)="isHovered = true"
+      (mouseleave)="isHovered = false"
+      [ngStyle]="{'text-decoration-line': isHovered ?'underline' :'none'}"
+    >Return to login</button>
+  </div>
+</div>

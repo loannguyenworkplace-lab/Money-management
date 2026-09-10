@@ -1,0 +1,28 @@
+<div class="container">
+  <img src="background.jpg" id="background" alt="background">
+  <div class="login-space">
+    <div class="login-form">
+      <form [formGroup]="accountLogin" (ngSubmit)="login()">
+        <div class="email-space">
+          <p class="description"> Enter your password</p>
+          <input type="email" id="email" formControlName="email" placeholder="****@gmail.com">
+        </div>
+        <div class="password-space">
+          <p class="description">Enter your password</p>
+          <input type="password" id="password" formControlName="password" placeholder="********">
+        </div>
+        <button id="enter-btn">Login</button>
+      </form>
+      <p id="create" (click)="createAccount()"
+        (mouseenter)="isHovered1 = true"
+        (mouseleave)="isHovered1 = false"
+        [ngStyle] ="{'text-decoration-line': isHovered1 ?'underline' :'none'}"
+      >Create new account</p>
+      <p id="forget-pass" (click)="resetPassword()"
+        (mouseenter)="isHovered2 =true"
+        (mouseleave)="isHovered2 = false"
+        [ngStyle]="{'text-decoration-line': isHovered2 ?'underline' :'none'}"
+      >Forget password</p>
+    </div>
+  </div>
+</div>
