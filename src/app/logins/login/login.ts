@@ -48,7 +48,7 @@ export class LoginComponent {
       return
     }
 
-    alert('Login successful');
+    return this.router.navigate(['./dashboard']);
     this.accountLogin.reset();
   }
 }

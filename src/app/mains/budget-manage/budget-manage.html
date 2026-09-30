@@ -1,0 +1,50 @@
+<div class="add-budget">
+  <div class="main-add-budget">
+    <header class="add-budget-header">
+      <h1>Manage Budgets</h1>
+      <button (click)="close.emit()">X</button>
+    </header>
+    <form [formGroup]="budgetForm">
+      <section class="input-detail">
+        <div class="input-space">
+          <span>Number</span>
+          <input type="number" formControlName="amount">
+            @if (budgetForm.controls.amount.touched && budgetForm.controls.amount.hasError('required')){
+              <small class="error">
+               Invalid
+              </small>
+            }
+        </div>
+        <div class="input-space">
+          <span>Date</span>
+          <input type="date" formControlName="date">
+            @if (budgetForm.controls.date.touched && budgetForm.controls.date.hasError('required')){
+              <small class="error">
+               Invalid
+              </small>
+            }
+        </div>
+        <div class="input-space">
+          <span>Category</span>
+          <select formControlName="category" formControlName="category">
+            <option>🍔 Food</option>
+            <option>🚕 Transport</option>
+            <option>🛍 Gocery shopping</option>
+            <option>💼 Income</option>
+            <option>💡 Bills</option>
+            <option>🎮 Entertainment</option>
+          </select>
+          @if (budgetForm.controls.category.touched && budgetForm.controls.category.hasError('required')){
+            <small class="error">
+              Invalid
+            </small>
+          }
+        </div>
+      </section>
+    </form>
+    <section class="add-budget-footer">
+      <button class="cancel-btn" (click)="close.emit()">Cancel</button>
+      <button class="add-btn" (click)="addBudget()">Add</button>
+    </section>
+  </div>
+</div>

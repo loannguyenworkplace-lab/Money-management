@@ -1,0 +1,354 @@
+<div class="app">
+  <nav-bar-app></nav-bar-app>
+  <main class="main-report">
+    <header class="report-header">
+      <div class="header-content">
+        <h1>Reports</h1>
+        <span>Analyze your income, expenses and spending habits</span>
+      </div>
+      <div class="header-option">
+        <select>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+        <select class="report-select">
+          <option>September 2026</option>
+          <option>August 2026</option>
+          <option>July 2026</option>
+          <option>June 2026</option>
+        </select>
+      </div>
+    </header>
+    <section class="summary">
+      <article class="summary-card">
+        <div class="card-top">
+          <div class="summary-icon income">$</div>
+          <span>Total Income</span>
+        </div>
+        <h2>$5,200.00</h2>
+        <div class="trend-positive">
+          ↑ 12.5%
+        <span>vs last month</span>
+        </div>
+      </article>
+      <article class="summary-card">
+        <div class="card-top">
+          <div class="summary-icon expenses">↘</div>
+          <span>Total Expenses</span>
+        </div>
+        <h2>$2,850.00</h2>
+        <div class="trend-positive">
+          ↓ 4.2%
+          <span>vs last month</span>
+        </div>
+      </article>
+      <article class="summary-card">
+        <div class="card-top">
+          <div class="summary-icon savings">↗</div>
+          <span>Total Savings</span>
+        </div>
+        <h2>$2,350.00</h2>
+        <div class="trend-positive">
+          ↑ 18.4%
+          <span>vs last month</span>
+        </div>
+      </article>
+    </section>
+    <section class="report-chart">
+      <div class="chart-header">
+        <div class="chart-name">
+          <h3>Income vs Expense</h3>
+          <span>Monthly comparison throughout the year</span>
+        </div>
+        <div class="legend-chart">
+          <div class="legend-item">
+          <span class="legend-dot income"></span>Income
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot expense"></span>Expense
+          </div>
+        </div>
+      </div>
+      <div class="chart-wrapper">
+        <div class="y-axis">
+          <span>$6k</span>
+          <span>$5k</span>
+          <span>$4k</span>
+          <span>$3k</span>
+          <span>$2k</span>
+          <span>$1k</span>
+          <span>$0</span>
+        </div>
+        <div class="chart-area">
+          <div class="chart-grid">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="bar-container">
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income jan-income"></div>
+                  <div class="bar-expense jan-expense"></div>
+                </div>
+                <span>Jan</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income feb-income"></div>
+                  <div class="bar-expense feb-expense"></div>
+                </div>
+                <div class="bar-expense"></div>
+                <span>Feb</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income mar-income"></div>
+                  <div class="bar-expense mar-expense"></div>
+                </div>
+                <span>Mar</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income apr-income"></div>
+                  <div class="bar-expense apr-expense"></div>
+                </div>
+                <span>Apr</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income may-income"></div>
+                  <div class="bar-expense may-expense"></div>
+                </div>
+                <span>May</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income jun-income"></div>
+                  <div class="bar-expense jun-expense"></div>
+                </div>
+                <span>Jun</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income jul-income"></div>
+                  <div class="bar-expense jul-expense"></div>
+                </div>
+                <span>Jul</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income aug-income"></div>
+                  <div class="bar-expense aug-expense"></div>
+                </div>
+                <span>Aug</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income sep-income"></div>
+                  <div class="bar-expense sep-expense"></div>
+                </div>
+                <span>Sep</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income oct-income"></div>
+                  <div class="bar-expense oct-expense"></div>
+                </div>
+                <span>Oct</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income nov-income"></div>
+                  <div class="bar-expense nov-expense"></div>
+                </div>
+                <span>Nov</span>
+              </div>
+            </div>
+            <div class="month-bar">
+              <div class="bars">
+                <div class="bar">
+                  <div class="bar-income dec-income"></div>
+                  <div class="bar-expense dec-expense"></div>
+                </div>
+                <span>Dec</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="reports-bottom">
+      <article class="report-bottom-card">
+       <div class="report-bottom-header">
+         <h3>Spending by Category</h3>
+         <span>Where your money goes</span>
+       </div>
+       <div class="spending-category">
+         <div class="category-chart">
+           <div class="chart-inside">
+             <div class="chart-sum">
+               <strong>$2,850</strong>
+               <span>Total</span>
+             </div>
+           </div>
+         </div>
+         <div class="chart-inf">
+             <div class="category-item">
+               <span class="category-color food"></span>
+               <div class="category-def">
+                 <strong>Food</strong>
+                 <span>32%</span>
+               </div>
+               <b>$912</b>
+             </div>
+             <div class="category-item">
+               <span class="category-color bills"></span>
+               <div class="category-def">
+                 <strong>Bills</strong>
+                 <span>25%</span>
+               </div>
+               <b>$713</b>
+             </div>
+             <div class="category-item">
+               <span class="category-color shopping"></span>
+               <div class="category-def">
+                 <strong>Shopping</strong>
+                 <span>20%</span>
+               </div>
+               <b>$570</b>
+             </div>
+             <div class="category-item">
+               <span class="category-color transport"></span>
+               <div class="category-def">
+                 <strong>Transport</strong>
+                 <span>15%</span>
+               </div>
+               <b>$428</b>
+             </div>
+             <div class="category-item">
+               <span class="category-color entertainment"></span>
+               <div class="category-def">
+                 <strong>Entertainment</strong>
+                 <span>8%</span>
+               </div>
+               <b>$227</b>
+             </div>
+           </div>
+       </div>
+      </article>
+      <article class="report-bottom-card">
+        <div class="report-bottom-header">
+          <h3>Top Expenses</h3>
+          <span>Your biggest spending this month</span>
+        </div>
+        <div class="expense-list">
+          <div class="expense-item">
+            <div class="expense-left">
+              <div class="expense-icon shopping">
+                🛍️
+              </div>
+              <div class="expense-info">
+                <strong>Shopping</strong>
+                <span>Sep 6, 2026</span>
+              </div>
+            </div>
+            <strong class="expense-amount">
+              $520
+            </strong>
+          </div>
+          <div class="expense-item">
+            <div class="expense-left">
+              <div class="expense-icon food">
+                🍔
+              </div>
+              <div class="expense-info">
+                <strong>Food</strong>
+                <span>Sep 7, 2026</span>
+              </div>
+            </div>
+            <strong class="expense-amount">
+              $420
+            </strong>
+          </div>
+          <div class="expense-item">
+            <div class="expense-left">
+              <div class="expense-icon bills">
+                💡
+              </div>
+              <div class="expense-info">
+                <strong>Bills</strong>
+                <span>Sep 5, 2026</span>
+              </div>
+            </div>
+            <strong class="expense-amount">
+              $380
+            </strong>
+          </div>
+          <div class="expense-item">
+            <div class="expense-left">
+              <div class="expense-icon transport">
+                🚕
+              </div>
+              <div class="expense-info">
+                <strong>Transport</strong>
+                <span>Sep 7, 2026</span>
+              </div>
+            </div>
+            <strong class="expense-amount">
+              $180
+            </strong>
+          </div>
+          <div class="expense-item">
+            <div class="expense-left">
+              <div class="expense-icon entertainment">
+                🎮
+              </div>
+              <div class="expense-info">
+                <strong>Entertainment</strong>
+                <span>Sep 3, 2026</span>
+              </div>
+            </div>
+            <strong class="expense-amount">
+              $150
+            </strong>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</div>

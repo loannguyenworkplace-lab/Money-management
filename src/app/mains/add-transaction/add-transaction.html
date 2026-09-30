@@ -1,0 +1,80 @@
+<div class="add-transaction">
+  <div class="main-add-transaction">
+    <header class="add-transaction-header">
+      <h1>Add Transaction</h1>
+      <button (click)="close.emit()">X</button>
+    </header>
+    <form [formGroup]="transactionForm">
+      <section class="type">
+        <input type="radio" id="expense" value="expense" formControlName="type">
+        <label for="expense" class="expense-label">Expense</label>
+        <input type="radio" id="income" value="income" formControlName="type">
+        <label for="income" class="income-label">Income</label>
+      </section>
+      <section class="input-detail">
+        <div class="input-space">
+          <span>Transaction name</span>
+          <input type="text" formControlName="name">
+            @if(transactionForm.controls.name.touched && transactionForm.controls.name.hasError('required')){
+              <small class="error">
+               Invalid
+              </small>
+            }
+        </div>
+        <div class="input-space">
+          <span>Amount</span>
+          <input type="number" placeholder="Enter amount" formControlName="amount">
+            @if(transactionForm.controls.amount.touched && transactionForm.controls.amount.hasError('required')){
+              <small class="error">
+                Invalid
+              </small>
+            }
+        </div>
+        <div class="input-space">
+          <span>Category</span>
+          <select formControlName="category" formControlName="category">
+            <option>🍔 Food</option>
+            <option>🚕 Transport</option>
+            <option>🛍 Gocery shopping</option>
+            <option>💼 Income</option>
+            <option>💡 Bills</option>
+            <option>🎮 Entertainment</option>
+          </select>
+          @if(transactionForm.controls.category.touched && transactionForm.controls.category.hasError('required')){
+            <small class="error">
+              Invalid
+            </small>
+          }
+        </div>
+        <div class="input-space">
+          <span>Date</span>
+          <input type="date" placeholder="Enter date" formControlName="date">
+            @if(transactionForm.controls.date.touched && transactionForm.controls.date.hasError('required')){
+              <small class="error">
+                Invalid
+              </small>
+            }
+        </div>
+        <div class="input-space">
+          <span>Note</span>
+          <div class="note-space">
+            <textarea class="note" placeholder="Enter short note" formControlName="note" >
+            </textarea>
+            @if(transactionForm.controls.note.touched && transactionForm.controls.note.hasError('required')){
+              <small class="error">
+                Invalid
+              </small>
+            }
+            <div class="counter_text">
+              <p><strong>0</strong> /250 letters</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+    <section class="add-transaction-footer">
+      <button class="cancel-btn" (click)="close.emit()">Cancel</button>
+      <button class="add-btn" (click)="addTransaction()">Add</button>
+    </section>
+  </div>
+</div>
