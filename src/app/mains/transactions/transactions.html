@@ -1,0 +1,326 @@
+<div class="transactions-app">
+  <nav-bar-app></nav-bar-app>
+  <main class="main-transactions">
+    <header class="transactions-header">
+      <div class="header-content">
+        <h1>Transactions</h1>
+        <span>Track and manage all your income and expenses</span>
+      </div>
+      <div class="transaction-btn">
+        <button class="add-btn" (click)="openModal()">+ Add Transaction
+        </button>
+        <select class="date-btn">
+          <option>Year</option>
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+        </select>
+      </div>
+      @if (showModal){
+      <div class="overlay">
+        <app-add-transaction (close)="closeModal()" (add)="addTransaction($event)"></app-add-transaction>
+      </div>
+      }
+    </header>
+    <section class="summary">
+      <article class="summary-card">
+        <div class="card-top">
+          <div class="balance-icon">$</div>
+          <div class="card-inf">
+            <span>Total Savings</span>
+            <strong>$12,540.00</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="summary-card">
+        <div class="card-top">
+          <div class="income-icon">↗</div>
+          <div class="card-inf">
+            <span>Total Income</span>
+            <strong >+$5,200.00</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="summary-card">
+        <div class="card-top">
+          <div class="expenses-icon">↘</div>
+          <div class="card-inf">
+            <span>Total Expenses</span>
+            <strong >-$2,850.00</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="summary-card">
+        <div class="card-top">
+          <div class="transactions-icon">↕</div>
+          <div class="card-inf">
+            <span>Transactions</span>
+            <strong class="transactions-number">48</strong>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="transactions-panel">
+      <div class="toolbar">
+        <div class="searchbox">
+          <button class="search-btn">⌕</button>
+          <input type="text" placeholder="Search transactions..." class="input-search">
+        </div>
+        <div class="filter">
+          <button>
+            <span class="filter-type">Type</span>
+            <select class="option-filter">
+              <option>All</option>
+              <option>Income</option>
+              <option>Expense</option>
+            </select>
+          </button>
+
+          <button>
+            <span class="filter-type">Category</span>
+            <select class="option-filter">
+              <option>All</option>
+              <option>🍔 Food</option>
+              <option>🚕 Transport</option>
+              <option>🛍 Gocery shopping</option>
+              <option>💼 Income</option>
+              <option>💡 Bills</option>
+              <option>🎮 Entertainment</option>
+            </select>
+          </button>
+
+          <button>
+            <span class="filter-type">Date</span>
+            <select class="option-filter">
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+          </button>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>TRANSACTION</th>
+              <th>CATEGORY</th>
+              <th>DATE</th>
+              <th>AMOUNT</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="transaction-name">
+                  <div class="transaction-avatar food">🍔</div>
+                  <div class="transaction-detail">
+                    <strong>Luch at restaurant</strong>
+                    <span>Luch with friends</span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <span class="category-detail food">Food</span>
+              </td>
+
+              <td class="date">
+                <span>Sep 7, 2026</span>
+                <small>12:30 PM</small>
+              </td>
+
+              <td>
+                <span class="amount out">-$25.00</span>
+              </td>
+
+              <td>
+                <span class="transactions-more">...</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="transaction-name">
+                  <div class="transaction-avatar transport">🚕</div>
+                  <div class="transaction-detail">
+                    <strong>Grab ride</strong>
+                    <span>Ride to office</span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <span class="category-detail transport">Transport</span>
+              </td>
+
+              <td class="date">
+                <span>Sep 7, 2026</span>
+                <small>09:20 AM</small>
+              </td>
+
+              <td>
+                <span class="amount out">-$12.50</span>
+              </td>
+
+              <td>
+                <span class="transactions-more">...</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="transaction-name">
+                  <div class="transaction-avatar shopping">🛍</div>
+                  <div class="transaction-detail">
+                    <strong>Grocery shopping</strong>
+                    <span>Weekly groceries</span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <span class="category-detail shopping">Shopping</span>
+              </td>
+
+              <td class="date">
+                <span>Sep 6, 2026</span>
+                <small>05:45 PM</small>
+              </td>
+
+              <td>
+                <span class="amount out">-$84.20</span>
+              </td>
+
+              <td>
+                <span class="transactions-more">...</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="transaction-name">
+                  <div class="transaction-avatar income">💼</div>
+                  <div class="transaction-detail">
+                    <strong>Monthly salary</strong>
+                    <span>September salary</span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <span class="category-detail income">Income</span>
+              </td>
+
+              <td class="date">
+                <span>Sep 1, 2026</span>
+                <small>09:00 AM</small>
+              </td>
+
+              <td>
+                <span class="amount in">+$5,200.00</span>
+              </td>
+
+              <td>
+                <span class="transactions-more">...</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="transaction-name">
+                  <div class="transaction-avatar bills">💡</div>
+                  <div class="transaction-detail">
+                    <strong>Electricity bill</strong>
+                    <span>Monthly electricity</span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <span class="category-detail bills">Bills</span>
+              </td>
+
+              <td class="date">
+                <span>Aug 30, 2026</span>
+                <small>10:15 AM</small>
+              </td>
+
+              <td>
+                <span class="amount out">-$72.40</span>
+              </td>
+
+              <td>
+                <span class="transactions-more">...</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="transaction-name">
+                  <div class="transaction-avatar entertainment">🎮</div>
+                  <div class="transaction-detail">
+                    <strong>Game subcription</strong>
+                    <span>Monthly subscription</span>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                <span class="category-detail entertainment">Entertainment</span>
+              </td>
+
+              <td class="date">
+                <span>Aug 28, 2026</span>
+                <small>08:00 PM</small>
+              </td>
+
+              <td>
+                <span class="amount out">-$15.40</span>
+              </td>
+
+              <td>
+                <span class="transactions-more">...</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-footer">
+        <span class="table-showing">
+          Showing <strong>1-6</strong> of <strong>48</strong> transactions
+        </span>
+        <div class="pagination">
+          <button disabled> ←</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <span>...</span>
+          <button>8</button>
+          <button>→</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

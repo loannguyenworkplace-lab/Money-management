@@ -1,0 +1,146 @@
+.add-transaction{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-add-transaction{
+  width: 450px;
+  min-height: 600px;
+  border: 2px solid #8992a5;
+  border-radius: 20px;
+  background-color: #f6f8fb;
+}
+.add-transaction-header{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.add-transaction-header h1{
+  font-size: 24px;
+  color: #000;
+  margin-left: 130px;
+}
+.add-transaction-header button{
+  font-size: 15px;
+  color: #8992a5;
+  background: none;
+  border: none;
+  margin: 10px 15px;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+}
+.add-transaction-header button:hover{
+  background-color:#ff0000;
+  color: white;
+}
+.type{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px;
+  gap: 10px;
+}
+.type p{
+  font-size: 16px;
+  font-weight: 600;
+}
+.type input{
+  display: none;
+}
+.type label{
+  height: 25px;
+  width: 80px;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+  border: 1px solid #8992a5;
+  background: #fff;
+  border-radius: 5px;
+}
+#income:checked + .income-label {
+  background-color: #22c55e;
+  color: white;
+}
+#expense:checked + .expense-label {
+  background-color: #ef4444;
+  color: white;
+}
+.input-detail{
+  margin: 20px 30px 20px 30px;
+  min-height: 350px;
+}
+.input-detail div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.input-space{
+  display: flex;
+  justify-content: center;
+}
+.input-space span{
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.input-space input, .input-space select{
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #8992a5;
+  padding-left: 8px;
+  outline: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+.input-space input, .input-space select{
+  margin-bottom: 10px;
+}
+.note{
+  min-height: 140px;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  outline: none;
+}
+.counter_text {
+  text-align: right;
+  font-size: 13px;
+}
+.counter_text p{
+  margin: 0;
+}
+.add-transaction-footer{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.add-transaction-footer button{
+  border: 1px solid #8992a5;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 25px;
+  width: 60px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.cancel-btn:hover{
+  background-color:#ff0000 !important;
+  color: white;
+}
+.add-btn:hover{
+  background-color:#2563eb !important;
+  color: white;
+}
+.add-transaction{
+   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+   border-radius: 20px;
+ }
+ .error{
+   color: red;
+ }

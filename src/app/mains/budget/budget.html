@@ -1,0 +1,220 @@
+<div class="app">
+  <nav-bar-app></nav-bar-app>
+  <main class="main-budget">
+    <header class="header-budget">
+      <div class="header-content">
+        <h1>Budgets</h1>
+        <span>Plan your spending and stay on track</span>
+      </div>
+      <div class="header-btn">
+        <div class="budget-period">
+          <button> < </button>
+          <div class="budget-period-def">
+            <span>Budget period</span>
+            <select class="month-filter">
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+          </div>
+          <button> > </button>
+        </div>
+        <div class="budget-add">
+          <button>+ Add Budget</button>
+        </div>
+      </div>
+    </header>
+    <section class="monthly-budget">
+      <div class="monthly-left">
+        <div class="section-label">
+          <span></span>
+          Monthly spending
+        </div>
+        <h2>$1,850</h2>
+        <p>
+          spent from your
+          <strong>$3,000</strong>
+          monthly budget
+        </p>
+        <div class="progress-info">
+          <div class="progress">
+            <div style="width: 62%"></div>
+          </div>
+          <div class="progress-number">
+            <span>62% used</span>
+            <span>$1,150 left</span>
+          </div>
+        </div>
+      </div>
+      <div class="monthly-right">
+        <div class="budget-circle">
+          <div class="circle-inner">
+            <strong>62%</strong>
+            <span>used</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="category-heading">
+      <div>
+        <h2>Category budgets</h2>
+        <span>See how you're spending across categories</span>
+      </div>
+      <button class="manage-btn">
+        Manage categories
+      </button>
+    </div>
+    <section class="category-grid">
+      <article class="category-card">
+        <div class="category-card-top">
+          <div class="category-icon food">
+            🍔
+          </div>
+          <div class="category-menu">···</div>
+        </div>
+        <div class="category-title">
+          <h3>Food</h3>
+          <span>Daily meals & dining</span>
+        </div>
+        <div class="category-money">
+          <strong>$420</strong>
+          <span> / $600</span>
+        </div>
+        <div class="category-progress">
+          <div
+            style="width: 70%">
+          </div>
+        </div>
+        <div class="category-footer">
+          <span>70% used</span>
+          <strong>$180 left</strong>
+        </div>
+      </article>
+      <article class="category-card">
+        <div class="category-card-top">
+          <div class="category-icon transport">
+            🚕
+          </div>
+          <div class="category-menu">
+            ···
+          </div>
+        </div>
+        <div class="category-title">
+          <h3>Transport</h3>
+          <span>Rides & transportation</span>
+        </div>
+        <div class="category-money">
+          <strong>$180</strong>
+          <span> / $300</span>
+        </div>
+        <div class="category-progress">
+          <div
+            class="category-fill transport-fill">
+          </div>
+        </div>
+        <div class="category-footer">
+          <span>60% used</span>
+          <strong>$120 left</strong>
+        </div>
+      </article>
+      <article class="category-card over-budget">
+        <div class="category-card-top">
+          <div class="category-icon shopping">
+            🛍️
+          </div>
+          <div class="category-menu">
+            ···
+          </div>
+        </div>
+        <div class="category-title">
+          <h3>Shopping</h3>
+          <span>Clothes & personal items</span>
+        </div>
+        <div class="category-money">
+          <strong>$520</strong>
+          <span> / $500</span>
+        </div>
+        <div class="category-progress">
+          <div
+            style="width: 100%; background-color: #ff0000;">
+          </div>
+        </div>
+        <div class="category-footer">
+          <span class="danger" style="color: #ff0000">104% used</span>
+          <strong class="danger" style="color: #ff0000">+$20 over</strong>
+        </div>
+      </article>
+      <article class="category-card">
+        <div class="category-card-top">
+          <div class="category-icon bills">
+            💡
+          </div>
+          <div class="category-menu">
+            ···
+          </div>
+        </div>
+        <div class="category-title">
+          <h3>Bills</h3>
+          <span>Utilities & monthly bills</span>
+        </div>
+        <div class="category-money">
+          <strong>$380</strong>
+          <span> / $700</span>
+        </div>
+        <div class="category-progress">
+          <div
+            style="width: 54%">
+          </div>
+        </div>
+        <div class="category-footer">
+          <span>54% used</span>
+          <strong>$320 left</strong>
+        </div>
+      </article>
+      <article class="category-card">
+        <div class="category-card-top">
+          <div class="category-icon entertainment">
+            🎮
+          </div>
+          <div class="category-menu">
+            ···
+          </div>
+        </div>
+        <div class="category-title">
+          <h3>Entertainment</h3>
+          <span>Games & subscriptions</span>
+        </div>
+        <div class="category-money">
+          <strong>$150</strong>
+          <span> / $250</span>
+        </div>
+        <div class="category-progress">
+          <div
+            style="width: 60%">
+          </div>
+        </div>
+        <div class="category-footer">
+          <span>60% used</span>
+          <strong>$100 left</strong>
+        </div>
+      </article>
+      <article class="category-card-add">
+        <div class="add-category-icon">
+         +
+        </div>
+        <h3>Add category</h3>
+        <span>
+          Create a custom spending category
+        </span>
+      </article>
+    </section>
+  </main>
+</div>

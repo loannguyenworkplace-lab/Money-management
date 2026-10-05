@@ -1,0 +1,233 @@
+<div class="setting">
+  <nav-bar-app></nav-bar-app>
+  <main class="main-setting">
+    <header class="header-setting">
+      <h2>Settings</h2>
+      <span>Manage your account and application pref</span>
+    </header>
+    <section class="setting-space">
+      <div>
+        <div class="setting-card-header">
+          <div class="setting-profile-header">
+            <h2>Profile</h2>
+            <span>Update your personal information</span>
+           </div>
+           <button class="save-btn"> Save changes</button>
+        </div>
+      </div>
+      <div class="profile-inf">
+        <div class="profile-avt">
+          <div class="profile-photo">HT</div>
+          <div>
+            <div class="profile-def">
+              <strong>Profile photo</strong>
+              <span>JPG, PNG or GIF. Maximum size 2MB</span>
+            </div>
+            <div profile-setting-btn>
+              <button class="upload-photo"> Upload new photo
+                <input type="file" accept="image/*" hidden>
+              </button>
+
+              <button class="delete-photo"> Remove
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="profile-name">
+          <div class="input">
+            <p>First Name</p>
+            <input type="text" placeholder="Enter your first name">
+          </div>
+          <div class="input">
+            <p>Last Name</p>
+            <input type="text" placeholder="Enter your last name">
+          </div>
+          <div class="input">
+            <p>Email Address</p>
+            <input type="text" placeholder="Enter your email">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="setting-space">
+      <div>
+        <div class="setting-header">
+          <h2>Preferences</h2>
+          <span>Customize how your finacial data is displayed</span>
+        </div>
+        <div class="setting-row">
+          <div class="setting-row-header">
+            <h3>Currency</h3>
+            <span>Choose the currency used throughout the app</span>
+          </div>
+          <select>
+            <option>VND - Vietnamese Dong</option>
+            <option>USD - US Dollar</option>
+          </select>
+        </div>
+        <div class="setting-row">
+          <div class="setting-row-header">
+            <h3>Date Format</h3>
+            <span>Choose how dates are displayed</span>
+          </div>
+          <select>
+            <option>dd/mm/yyyy</option>
+            <option>mm/dd/yyyy</option>
+            <option>yyyy-mm-</option>
+          </select>
+        </div>
+        <div class="setting-row-language">
+          <div class="setting-row-header">
+            <h3>Language</h3>
+            <span>Select your preferred</span>
+          </div>
+          <select>
+            <option>Vietnamese</option>
+            <option>English</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="setting-space">
+      <div class="setting-header">
+        <h2>Appearance</h2>
+        <span>Customize the look and fell of your dashboard</span>
+      </div>
+      <div class="setting-appearance">
+        <label class="theme-option">
+          <input type="radio" name="theme">
+          <div class="theme-inside-light">
+            <div class="preview-sidbar-light"></div>
+            <div class="preview-content-light">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="theme-label">
+            <strong>Light</strong>
+            <span>Clean and bright</span>
+          </div>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme">
+          <div class="theme-inside-dark">
+            <div class="preview-sidbar-dark"></div>
+            <div class="preview-content-dark">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="theme-label">
+            <strong>Dark</strong>
+            <span>Easy on the eyes</span>
+          </div>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme">
+          <div class="theme-inside-system">
+            <div class="preview-sidbar-system"></div>
+            <div class="preview-content-system">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="theme-label">
+            <strong>System</strong>
+            <span>Use device settings</span>
+          </div>
+        </label>
+
+      </div>
+    </section>
+    <section class="setting-space">
+      <div class="setting-header">
+        <h2>Notifications</h2>
+        <span>Choose which notifications you want to receive</span>
+      </div>
+      <div class="notification-inf">
+        <div class="setting-row">
+          <div class="setting-row-header">
+            <h3
+            >Budget alerts</h3>
+            <span>Notify me when I am close to exceeding a budget</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-row">
+          <div class="setting-row-header">
+            <h3>Weekly summary</h3>
+            <span>Receive a weekly summary of your spending</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-row-transaction">
+           <div class="setting-row-header">
+             <h3>Transaction reminders</h3>
+             <span>Remind me about recurring transactions</span>
+           </div>
+           <label class="switch">
+             <input type="checkbox" checked>
+             <span class="slider"></span>
+           </label>
+         </div>
+      </div>
+    </section>
+    <section class="setting-space">
+      <div class="setting-header">
+        <h2>Security</h2>
+        <span>Manage your account security</span>
+      </div>
+      <div class="setting-account">
+        <div class="setting-account-detail">
+          <div class="setting-account-def">
+            <div class="password-icon">🔑</div>
+            <div class="password-detail">
+              <strong>Password</strong>
+              <span>Change your new password</span>
+            </div>
+          </div>
+          <button class="password-btn">Change Password</button>
+        </div>
+        <div class="setting-account-detail">
+          <div class="setting-account-def">
+            <div class="sign-out-icon">🚪</div>
+            <div class="sign-out-detail">
+              <strong>Sign out</strong>
+              <span>Sign out from this account on this device</span>
+            </div>
+          </div>
+          <button class="sign-out-btn">Sign Out</button>
+        </div>
+      </div>
+    </section>
+    <section class="setting-delete-space">
+       <div class="setting-delete-header">
+         <h2>Danger Zone</h2>
+         <span>Permanently delete your account and all associated data</span>
+       </div>
+       <div class="setting-account">
+         <div class="setting-account-detail">
+           <div class="setting-account-def">
+             <div class="delete-account-icon">⚠</div>
+             <div class="delete-account-detail">
+               <strong>Delete Account</strong>
+               <span>Once you delete your account, all your transactions, budgets and categories will be permanently removed.
+               </span>
+             </div>
+           </div>
+           <button class="delete-account-btn">Delete Account</button>
+         </div>
+       </div>
+     </section>
+  </main>
+</div>

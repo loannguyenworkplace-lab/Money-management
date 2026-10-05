@@ -1,0 +1,263 @@
+<div class="app">
+  <nav-bar-app></nav-bar-app>
+  <main class="main">
+    <header>
+      <div class="dashboard">
+        <h1>Dashboard</h1>
+        <p>Here's your financial overview</p>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn">🔎</button>
+        <button class="notification">🔔</button>
+        <select class="date-btn" [(ngModel)]="selectedMonth">
+          <option [ngValue]="0">January</option>
+          <option [ngValue]="1">February</option>
+          <option [ngValue]="2">March</option>
+          <option [ngValue]="3">April</option>
+          <option [ngValue]="4">May</option>
+          <option [ngValue]="5">June</option>
+          <option [ngValue]="6">July</option>
+          <option [ngValue]="7">August</option>
+          <option [ngValue]="8">September</option>
+          <option [ngValue]="9">October</option>
+          <option [ngValue]="10">November</option>
+          <option [ngValue]="11">December</option>
+ </select>
+      </div>
+    </header>
+    <section class="summary">
+      <article class="summary-card">
+        <div class="card-top">
+          <span>Total Income</span>
+          <div class="summary-icon income">$</div>
+          </div>
+        <h2>${{transactionService.totalIncome(selectedMonth)}}</h2>
+        <div class="trend-positive">
+          @if(transactionService.compareIncome(selectedMonth)> 0){
+          <span>↑</span>
+          }@else{
+          <span>↓</span>
+          }
+          {{transactionService.compareIncome(selectedMonth)}}%
+        <span>vs last month</span>
+        </div>
+      </article>
+
+      <article class="summary-card">
+        <div class="card-top">
+          <span>Total Expenses</span>
+          <div class="summary-icon expenses">$</div>
+        </div>
+        <h2>${{transactionService.totalExpense(selectedMonth)}}</h2>
+        <div class="trend-positive">
+          @if(transactionService.compareExpense(selectedMonth)> 0){
+          <span>↑</span>
+          }@else{
+          <span>↓</span>
+          }
+           {{transactionService.compareExpense(selectedMonth)}}%
+          <span>vs last month</span>
+        </div>
+      </article>
+
+
+      <article class="summary-card">
+        <div class="card-top">
+          <span>Total Savings</span>
+          <div class="summary-icon savings">$</div>
+        </div>
+        <h2>${{transactionService.totalSaving(selectedMonth)}}</h2>
+        <div class="trend-positive">
+          @if(transactionService.compareSavings(selectedMonth)> 0){
+          <span>↑</span>
+          }@else{
+          <span>↓</span>
+          }
+           {{transactionService.compareSavings(selectedMonth)}}%
+          <span>vs last month</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="analytics-top">
+      <article class="chart-panel">
+        <div class="chart-header">
+          <div>
+            <h3>Income - Expenses</h3>
+            <p>Financial activity over time</p>
+          </div>
+          <select [(ngModel)]="chartPeriod">
+            <option [ngValue]="'last'">Last 6 months</option>
+            <option [ngValue]="'year'">This year</option>
+          </select>
+        </div>
+
+        <div class="chart-wrapper" [style.height.px]="transactionService.maxHeightChart(chartPeriod)">
+          <div class="y-axis">
+            <span *ngFor="let axis of transactionService.getAxes(chartPeriod)">
+              ${{ axis }}k
+            </span>
+          </div>
+          <div class="chart-area">
+            <div class="chart-grid">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="bar-container">
+              @for (item of transactionService.getChartMonth(chartPeriod); track item.month){
+              <div class="month-bar">
+                <div class="bars">
+                  <div class="bar" [style.height.px]="transactionService.maxHeightChart(chartPeriod)">
+                    <div class="bar-income" [style.height.px]="transactionService.totalIncome(item.month)/10"></div>
+                    <div class="bar-expense" [style.height.px]="transactionService.totalExpense(item.month)/10"></div>
+                  </div>
+                  <span>{{item.name}}</span>
+                </div>
+              </div>
+            }
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="spending">
+        <div class="spending-header">
+          <div>
+            <h3>Spending</h3>
+            <p>By category</p>
+          </div>
+        </div>
+        <div class="spending-circle">
+          <div class="chart-circle">
+            <div class="chart-line"
+              [style.background]="'conic-gradient(#2563eb 0% ' + transactionService.incomeSpending(selectedMonth) + '%, #8b5cf6 ' + transactionService.incomeSpending(selectedMonth) + '% ' + (transactionService.incomeSpending(selectedMonth) + transactionService.expenseSpending(selectedMonth)) + '%, #f59e0b ' + (transactionService.incomeSpending(selectedMonth) + transactionService.expenseSpending(selectedMonth)) + '% 100%)'"
+            >
+              <div class="chart-inside">
+                <strong>{{transactionService.monthInsideChart(selectedMonth)}}</strong>
+              </div>
+            </div>
+          </div>
+          <div class="beside-chart">
+            <div class="note-chart">
+              <div class="note-item">
+                <span class="note-color income"></span>
+                <div class="note-detail">
+                  <strong>Income</strong>
+                  <span></span>
+                </div>
+                <b>${{transactionService.totalIncome(selectedMonth)}}</b>
+              </div>
+            </div>
+            <div class="note-chart">
+              <div class="note-item">
+                <span class="note-color expense"></span>
+                <div class="note-detail">
+                  <strong>Expense</strong>
+                  <span></span>
+                </div>
+                <b>${{transactionService.totalExpense(selectedMonth)}}</b>
+              </div>
+            </div>
+            <div class="note-chart">
+              <div class="note-item">
+                <span class="note-color saving"></span>
+                <div class="note-detail">
+                  <strong>Saving</strong>
+                  <span></span>
+                </div>
+                <b>${{transactionService.totalSaving(selectedMonth)}}</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="analytics-bottom">
+      <article class="transactions">
+        <div class="transactions-header">
+          <div>
+            <h3>Recent Transactions</h3>
+            <p>Your latest financial activity</p>
+          </div>
+          <div class="manage-btn">
+            <button class="view-all" (click)="openViewAll()">View all →</button>
+          </div>
+        </div>
+        <div class="transaction-list">
+          @for (transaction of transactionService.getRecentTransaction(selectedMonth); track transaction.id){
+          <div class="more-inf">
+            <div class="icon">{{(transaction.category).slice(0,2)}}</div>
+            <div class="transaction-inf">
+              <strong>{{transaction.name}}</strong>
+              <small>{{(transaction.category).slice(2)}} · {{transaction.date | date:'dd/MM/yyyy'}}</small>
+            </div>
+            @if(transaction.type === "income"){
+            <strong class="amount" [style.color]="'#41E847'">+${{transaction.amount}}</strong>
+            }@else{
+            <strong class="amount" [style.color]="'#FF3636'">-${{transaction.amount}}</strong>
+            }
+          </div>
+          }
+        </div>
+      </article>
+
+      <article class="budget">
+        <div class="budget-header">
+          <div>
+            <h3>Monthly Budget</h3>
+            <p>{{transactionService.monthInsideBudget(selectedMonth)}}</p>
+          </div>
+          <div class="manage-btn">
+            <button class="manage" (click)="openModal()">Manage →</button>
+        </div>
+        </div>
+        <div class="budget-total">
+          <div class="current-budget">
+            <strong>${{transactionService.totalExpense(selectedMonth)}}</strong>
+            <span> of ${{transactionService.totalIncome(selectedMonth)}} spent</span>
+          </div>
+          <div class="number-progress">
+            <strong>{{transactionService.expenseSpending(selectedMonth)}}%</strong>
+          </div>
+        </div>
+        <div class="progress">
+          <div style="width: {{transactionService.expenseSpending(selectedMonth)}}%"></div>
+        </div>
+        <p><strong>${{transactionService.totalSaving(selectedMonth)}}</strong> remaining this month</p>
+        <div class="budget-list">
+          @for (budget of budgetService.getBudgetByCategory(selectedMonth); track budget.category){
+          <div class="budget-inf">
+            <div class="budget-icon">
+              <span>{{budget.category}}</span>
+                <small>${{transactionService.getExpenseByCategory(budget.category,selectedMonth)}}/ ${{budget.amount}}</small>
+            </div>
+
+            <div class="budger-progress">
+              @if (transactionService.getExpenseByCategory(budget.category, selectedMonth) / budget.amount > 0) {
+                <div
+                  [style.width.%]="transactionService.getExpenseByCategory(budget.category, selectedMonth) / budget.amount * 100">
+                </div>
+              }
+            </div>
+          </div>
+          }
+        </div>
+      </article>
+    </section>
+  </main>
+  @if(showModal){
+  <div class="overlay">
+    <app-budget-manage (close)="closeModal()" (add)="addBudget($event)"></app-budget-manage>
+  </div>
+  }
+  @if(showViewAll){
+    <div class="overlay">
+      <app-view-all-transactions (closeViewAll)="closeViewAll()" [selectedMonth]="selectedMonth"></app-view-all-transactions>
+    </div>
+    }
+</div>

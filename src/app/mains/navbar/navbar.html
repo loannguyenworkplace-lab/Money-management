@@ -1,0 +1,37 @@
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-icon">$</div>
+    <span class="brand-content">Money</span>
+  </div>
+  <nav class="nav">
+    <button class="nav-item" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <span>⌂</span>
+      Dashboard
+    </button>
+    <button class="nav-item" routerLink="/transactions" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <span>↕</span>
+      Transactions
+    </button>
+    <button class="nav-item" routerLink="/budgets" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <span>◎</span>
+      Budgets
+    </button>
+    <button class="nav-item" routerLink="/reports" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <span>◒</span>
+      Reports
+    </button>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="nav-item" routerLink="/setting" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <span>⚙</span>
+      Settings
+    </button>
+  </div>
+  <div class="user">
+    <div class="avatar">T</div>
+    <div class="user-inf">
+      <strong>Test</strong>
+      <small>test@gmail.com</small>
+    </div>
+  </div>
+</aside>

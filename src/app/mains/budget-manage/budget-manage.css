@@ -1,0 +1,99 @@
+.add-budget{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-add-budget{
+  width: 450px;
+  min-height: 300px;
+  border: 2px solid #8992a5;
+  border-radius: 20px;
+  background-color: #f6f8fb;
+}
+.add-budget-header{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.add-budget-header h1{
+  font-size: 24px;
+  color: #000;
+  margin-left: 130px;
+}
+.add-budget-header button{
+  font-size: 15px;
+  color: #8992a5;
+  background: none;
+  border: none;
+  margin: 10px 15px;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+}
+.add-budget-header button:hover{
+  background-color:#ff0000;
+  color: white;
+}
+
+.input-detail{
+  margin: 20px 30px 20px 30px;
+}
+.input-detail div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.input-space{
+  display: flex;
+  justify-content: center;
+}
+.input-space span{
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.input-space input, .input-space select{
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #8992a5;
+  padding-left: 8px;
+  outline: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+.input-space input, .input-space select{
+  margin-bottom: 10px;
+}
+.add-budget-footer{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.add-budget-footer button{
+  border: 1px solid #8992a5;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 25px;
+  width: 60px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.cancel-btn:hover{
+  background-color:#ff0000 !important;
+  color: white;
+}
+.add-btn:hover{
+  background-color:#2563eb !important;
+  color: white;
+}
+.add-budget{
+   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+   border-radius: 20px;
+ }
+ .error{
+   color: red;
+ }
